@@ -1,0 +1,67 @@
+<section class="plane">
+  <div class="screen">
+    <h1>S C R E E N</h1>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmnySv2Ql7XHvVn0TI6lhRtqMmCQ3NXlyWJw&usqp=CAU"  width="200" height="100">
+  </div>
+  <div class="seats" class="flex-container">
+    <div>
+      <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+        <div *ngFor="let seat of seatIdA; let i =index" class="seatIdStyle">
+          <input type="checkbox" class="styledcheckbox" formArrayName="selectedSeats"  [value]="seat.value" (change)="onCheckBoxChange($event)" /> 
+          {{ seat.name }}  
+        </div>
+      </form>
+    </div>
+    <div>
+      <p>-</p>
+    </div>
+    <div>
+      <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+        <div *ngFor="let seat of seatIdB; let i =index" class="seatIdStyle">
+          <input type="checkbox" class="styledcheckbox" formArrayName="selectedSeats"  [value]="seat.value" (change)="onCheckBoxChange($event)" />
+          {{ seat.name}}
+        </div>
+      </form>
+    </div>
+    <div>
+      <p>-</p>
+    </div>
+    <div>
+      <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+        <div *ngFor="let seat of seatIdC; let i =index" class="seatIdStyle">
+          <input type="checkbox" class="styledcheckbox" formArrayName="selectedSeats"  [value]="seat.value" (change)="onCheckBoxChange($event)" />
+          {{ seat.name}}
+        </div>
+      </form>
+    </div>
+    <div>
+      <p>-</p>
+    </div>
+    <div>
+      <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+        <div *ngFor="let seat of seatIdD; let i =index" class="seatIdStyle">
+          <input type="checkbox" class="styledcheckbox" formArrayName="selectedSeats"  [value]="seat.value" (change)="onCheckBoxChange($event)" />
+          {{ seat.name}}
+        </div>
+      </form>
+    </div>
+    <div>
+      <p>-</p>
+    </div>
+    <div>
+      <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+        <div *ngFor="let seat of seatIdE; let i =index" class="seatIdStyle">
+          <input type="checkbox" class="styledcheckbox" formArrayName="selectedSeats"  [value]="seat.value" (change)="onCheckBoxChange($event)" />
+          {{ seat.name}}
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="display">
+  <p >{{ form.value | json }}</p>
+  <p >No.of Seats Selected :{{ count }}</p>
+  <button type="next">Next</button>
+  </div>
+</section>
+
+
